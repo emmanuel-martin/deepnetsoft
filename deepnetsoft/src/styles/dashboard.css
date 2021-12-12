@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.logo img {
+  height: 80px;
+}
+.profile {
+  float: right;
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.product-management {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 200px;
+}
+
+.product-search {
+  width: 400px;
+  align-content: space-around;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 8px;
+  font-size: 18px;
+}
+
+th {
+  background-color: #195be6;
+  color: white;
+}
+
+td {
+  background-color: rgb(236, 237, 238);
+}

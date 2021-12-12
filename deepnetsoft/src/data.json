@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "pname": "Product 1",
+      "price": "$10",
+      "quantity" : "100gm"
+    },
+    {
+      "id": 2,
+      "pname": "Product 2",
+      "price": "$20",
+      "quantity" : "200gm"
+    },
+    {
+      "id": 3,
+      "pname": "Product 3",
+      "price": "$30",
+      "quantity" : "300gm"
+    },
+    {
+      "id": 4,
+      "pname": "Product 4",
+      "price": "$40",
+      "quantity" : "400gm"
+    },
+    {
+      "id": 5,
+      "pname": "Product 5",
+      "price": "$50",
+      "quantity" : "500gm"
+    }
+]
