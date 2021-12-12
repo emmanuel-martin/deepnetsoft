@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Logo from "../assets/logo.png"
 import "../styles/dashboard.css"
 import TableData from "../components/tabledata"
+import data from "../data.json"
 const Dashboard = () => {
     
-    
+    const [products, setProducts] = useState(data);
     return(
         
         <div className='content'>
@@ -25,7 +26,9 @@ const Dashboard = () => {
                     <input type="search" className='search-input' placeholder='Search' />
                     <select>
                         <option name="category" selected>Category</option>
-                        <option name="shoes" selected>Shoes</option>
+                        {products.map((product) => (
+                           <option name={product.category}>{product.category}</option>
+                        ))}
                     </select>
                     <a href='/addproducts'>
                         <button>Add Product</button>
