@@ -18,7 +18,7 @@ const Login = () => {
                 
                     <input type="text" placeholder="Username" className="input-form" /><br></br>
                     <input type="password" placeholder="Password" className="input-form" />
-                    <input type="submit" value="Submit" className='button' />
+                    <a href="/Dashboard" ><button className='button'>Submit</button></a>
             </div>
         </div>
     );
