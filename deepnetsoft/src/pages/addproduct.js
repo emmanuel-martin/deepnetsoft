@@ -56,7 +56,7 @@ const AddProduct = () => {
                 </div>
                 
                     <form onSubmit={handleAddFormSubmit}>
-                    <input type="text" name='name' required placeholder="Name" className="input-form" onChange={handleAddFormChange}/><br></br>
+                    <input type="text" name='pname' required placeholder="Name" className="input-form" onChange={handleAddFormChange}/><br></br>
                     <input type="text" name='price' required placeholder="Price" className="input-form" onChange={handleAddFormChange}/><br></br>
                     <input type="text" name='quantity' required placeholder="Quantity" className="input-form" onChange={handleAddFormChange}/><br></br>
                     <input type="text" name='category' required placeholder="Category" className="input-form" onChange={handleAddFormChange}/><br></br>

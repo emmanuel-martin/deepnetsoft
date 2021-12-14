@@ -6,75 +6,111 @@ import {nanoid} from "nanoid"
 const TableData = () => {
 
     const [products, setProducts] = useState(data);
-    const [editFormdata, setEditFormData] = useState({
-        pname: '',
-        price: '',
-        quantity: '',
-        category: ''
+    const [addFormData, setAddFormData] = useState({
+      pname: "",
+      price: "",
+      quantity: "",
+      category: "",
     });
+  
+    const [editFormData, setEditFormData] = useState({
+        pname: "",
+        price: "",
+        quantity: "",
+        category: "",
+    });
+  
     const [editProductId, setEditProductId] = useState(null);
-
-    const handleEditClick = (event, product) =>{
-        event.preventDefault();
-        setEditProductId(product.id);
-        const formValues = {
-            pname: product.pname,
-            price: product.price,
-            quantity: product.quantity,
-            category: product.category
-        }
-    }
-
-    const handleEditFormChange = (event) => {
-        event.preventDefault();
-
-        const fieldName = event.target.getAttribute('name');
-        const fieldValue = event.target.value;
-
-        const newFormData = {...editFormdata};
-        newFormData[fieldName] = fieldValue;
-        setEditFormData(newFormData);
-    }
-    
-    const[addFormData, setAddFormData] = useState(
-        {
-            pname: '',
-            price: '',
-            quantity: '',
-            category: ''
-        }
-    );
+  
     const handleAddFormChange = (event) => {
-        event.preventDefault();
-        const fieldName = event.target.getAttribute('name');
-
-        const fieldValue = event.target.value;
-
-        const newFormData = {...addFormData};
-
-        newFormData[fieldName] = fieldValue;
-
-        setAddFormData(newFormData);
-
+      event.preventDefault();
+  
+      const fieldName = event.target.getAttribute("name");
+      const fieldValue = event.target.value;
+  
+      const newFormData = { ...addFormData };
+      newFormData[fieldName] = fieldValue;
+  
+      setAddFormData(newFormData);
     };
-
-    const handleAddFormSubmit = (event) =>{
-        event.preventDefault();
-
-        const newProduct = {
-            id: nanoid(),
-            pname: addFormData.pname,
-            price: addFormData.price,
-            quantity: addFormData.quantity,
-            category: addFormData.category
-        };
-
-        const newProducts = [...products, newProduct];
-        setProducts(newProducts);
-
-    }
+  
+    const handleEditFormChange = (event) => {
+      event.preventDefault();
+  
+      const fieldName = event.target.getAttribute("name");
+      const fieldValue = event.target.value;
+  
+      const newFormData = { ...editFormData };
+      newFormData[fieldName] = fieldValue;
+  
+      setEditFormData(newFormData);
+    };
+  
+    const handleAddFormSubmit = (event) => {
+      event.preventDefault();
+  
+      const newProduct = {
+        id: nanoid(),
+        pname: addFormData.pname,
+        price : addFormData.price,
+        quantity: addFormData.quantity,
+        category: addFormData.category,
+      };
+  
+      const newProducts = [...products, newProduct];
+      setProducts(newProducts);
+    };
+  
+    const handleEditFormSubmit = (event) => {
+      event.preventDefault();
+  
+      const editedProduct = {
+        id: editProductId,
+        pname: editFormData.pname,
+        price: editFormData.price,
+        quanity: editFormData.quantity,
+        category: editFormData.category,
+      };
+  
+      const newProducts = [...products];
+  
+      const index = products.findIndex((product) => product.id === editProductId);
+  
+      newProducts[index] = editedProduct;
+  
+      setProducts(newProducts);
+      setEditProductId(null);
+    };
+  
+    const handleEditClick = (event, product) => {
+      event.preventDefault();
+      setEditProductId(product.id);
+  
+      const formValues = {
+        pname: product.pname,
+        price: product.price,
+        quanity: product.quanity,
+        category: product.category,
+      };
+  
+      setEditFormData(formValues);
+    };
+  
+    const handleCancelClick = () => {
+      setEditProductId(null);
+    };
+  
+    const handleDeleteClick = (productId) => {
+      const newProducts = [...products];
+  
+      const index = products.findIndex((product) => product.id === productId);
+  
+      newProducts.splice(index, 1);
+  
+      setProducts(newProducts);
+    };
     return(
-        <form>
+        <form onSubmit={handleEditFormSubmit}>
         <table>
 
                     <thead>
@@ -83,13 +119,14 @@ const TableData = () => {
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                        
                     </thead>
                     <tbody>
                         {products.map((product) => (
                             <Fragment>
-                                {editProductId === product.id ? <EditableRow editFormdata={editFormdata} handleEditFormChange={handleEditFormChange}/> : <ReadOnlyRow product={product} handleEditClick={handleEditClick}/>}
+                                {editProductId === product.id ? <EditableRow editFormdata={editFormData} handleEditFormChange={handleEditFormChange} handleCancelClick={handleCancelClick}/> : <ReadOnlyRow product={product} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick}/>}
                                 
                             </Fragment>
                            
