@@ -16,7 +16,7 @@ const Dashboard = () => {
             <img src={Logo} alt='logo'/>
             </div>
             <div className='profile'>
-                <p>logout</p>
+                <a href="/"><p>logout</p></a>
             </div>
             </div>
 
