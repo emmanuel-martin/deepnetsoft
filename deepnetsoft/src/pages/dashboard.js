@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Logo from "../assets/logo.png"
+import Logo from "../assets/logo.png" 
 import "../styles/dashboard.css"
 import TableData from "../components/tabledata"
 import data from "../data.json"
@@ -43,5 +43,5 @@ const Dashboard = () => {
     );
 
 }
-
+update
 export default Dashboard;
