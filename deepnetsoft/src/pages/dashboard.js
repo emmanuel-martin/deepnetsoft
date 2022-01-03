@@ -43,5 +43,5 @@ const Dashboard = () => {
     );
 
 
-update}
+}
 export default Dashboard;
