@@ -39,7 +39,7 @@ const Dashboard = () => {
                     <TableData />
                 </div>
             </div>
-        </div>
+        </div> 
         
     );
 
