@@ -32,7 +32,7 @@ const Dashboard = () => {
                     </select>
                     <a href='/addproducts'>
                         <button>Add Product</button>
-                        </a>
+                    </a>
                     
                 </div>
                 <div className='product-list'>
