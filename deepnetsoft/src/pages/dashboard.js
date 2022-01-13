@@ -42,7 +42,7 @@ const Dashboard = () => {
         </div> 
         
     );
-udpate
+
 }
 
 export default Dashboard;
