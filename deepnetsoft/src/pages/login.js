@@ -24,5 +24,5 @@ const Login = () => {
     );
 
 }
-udpate
+
 export default Login;
