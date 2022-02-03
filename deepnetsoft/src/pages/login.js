@@ -24,5 +24,5 @@ const Login = () => {
     );
 
 }
-upd
+
 export default Login;
