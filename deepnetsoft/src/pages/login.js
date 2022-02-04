@@ -23,6 +23,6 @@ const Login = () => {
         </div>
     );
 
-}upadte
+}
 
 export default Login;
