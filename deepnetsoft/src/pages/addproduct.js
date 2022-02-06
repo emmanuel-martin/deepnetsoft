@@ -68,5 +68,5 @@ const AddProduct = () => {
     );
 
 }
-update
+
 export default AddProduct;
