@@ -127,7 +127,6 @@ const TableData = () => {
                         {products.map((product) => (
                             <Fragment>
                                 {editProductId === product.id ? <EditableRow editFormdata={editFormData} handleEditFormChange={handleEditFormChange} handleCancelClick={handleCancelClick}/> : <ReadOnlyRow product={product} handleEditClick={handleEditClick} handleDeleteClick={handleDeleteClick}/>}
-                                
                             </Fragment>
                            
                         ))}
