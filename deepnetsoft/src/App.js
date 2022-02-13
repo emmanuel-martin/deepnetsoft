@@ -10,12 +10,7 @@ function App() {
   return (
 
     <BrowserRouter>
-
-
       <Switch>
-
-
-
         <Route exact path='/'>
           <Login />
         </Route>
@@ -35,4 +30,3 @@ function App() {
 }
 
 export default App;
-update
