@@ -70,5 +70,5 @@ const AddProduct = () => {
 }
 
 export default AddProduct;
-up
+
 
